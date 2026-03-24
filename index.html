@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drake Style Portfolio</title>
+    <meta
+      name="description"
+      content="Modern dark single-page portfolio inspired by the Drake template."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: "#111111",
+              panel: "#1b1b1b",
+              soft: "#c7c7c7",
+              accent: "#28e98c"
+            },
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"]
+            },
+            boxShadow: {
+              panel: "0 0 0 1px rgba(255,255,255,0.12)"
+            }
+          }
+        }
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="bg-ink font-sans text-white antialiased">
+    <div class="relative min-h-screen overflow-x-hidden">
+      <div class="mx-auto flex max-w-[1800px] gap-6 px-3 py-3 md:px-5 xl:px-8">
+        <aside class="w-full xl:w-[320px] xl:shrink-0">
+          <div class="sidebar-card xl:sticky xl:top-6">
+            <div class="sidebar-header">
+              <div class="sidebar-brand">
+                <div>
+                  <div class="text-[3.15rem] font-semibold leading-none tracking-[-0.08em] text-white">Hans</div>
+                  <div class="text-xs uppercase tracking-[0.3em] text-zinc-500">Portfolio</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 overflow-hidden rounded-[2rem] bg-zinc-900">
+              <img
+                src="./assets/profile.jpg"
+                alt="Profile portrait"
+                class="h-[325px] w-full rounded-[2rem] object-cover"
+              />
+            </div>
+
+            <div class="mt-10 text-center">
+              <p class="text-[1.85rem] font-medium tracking-[-0.05em] text-zinc-100">Hans S. Manguilimotan</p>
+              <p class="mt-3 text-[1.15rem] font-medium uppercase tracking-[0.22em] text-accent">Computer Engineer</p>
+              <p class="mt-4 text-[1.1rem] font-normal tracking-[-0.02em] text-zinc-400">Cebu City, Philippines</p>
+            </div>
+
+            <div class="social-links flex justify-center gap-4 mt-6">
+              <a href="https://x.com/" target="_blank" rel="noreferrer" class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-[#28e98c] transition-all social-fa" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-[#28e98c] transition-all social-fa" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-[#28e98c] transition-all social-fa" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://github.com/" target="_blank" rel="noreferrer" class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-[#28e98c] transition-all social-fa" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+
+            <a href="#contact" class="hire-cta">
+              <i data-lucide="mail" class="h-5 w-5"></i>
+              <span>HIRE ME!</span>
+            </a>
+          </div>
+        </aside>
+
+        <main class="min-w-0 flex-1 xl:px-8">
+          <section id="home" class="page-section hero-section reveal-card">
+            <div class="section-pill reveal-child">
+              <i data-lucide="house" class="h-3.5 w-3.5"></i>
+              <span>PROFILE</span>
+            </div>
+
+            <div class="max-w-[1120px] pt-12 md:pt-20">
+              <h1 class="hero-title reveal-child">
+                <span class="hero-line hero-name">Hans S. Manguilimotan</span>
+                <span class="hero-line text-accent">Computer Engineer</span>
+                <span class="hero-line hero-subline">Web Development &amp; Accounting Support</span>
+              </h1>
+              <p class="hero-copy reveal-child">
+                I create clean websites and provide reliable support for accounting and business tasks.
+              </p>
+
+              <div class="hero-stats reveal-child">
+                <div class="hero-stat">
+                  <span class="hero-stat-number">1Yr</span>
+                  <p class="hero-stat-label">Years of Experience</p>
+                </div>
+                <div class="hero-stat">
+                  <span class="hero-stat-number">10</span>
+                  <p class="hero-stat-label">Personal Website Projects Completed</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="#portfolios" class="orbit-link reveal-child" aria-label="Go to portfolios">
+              <svg viewBox="0 0 200 200" class="orbit-ring">
+                <defs>
+                  <path
+                    id="orbit-text-path"
+                    d="M 100, 100 m -70, 0 a 70,70 0 1,1 140,0 a 70,70 0 1,1 -140,0"
+                  ></path>
+                </defs>
+                <text>
+                  <textPath href="#orbit-text-path">
+                    MY PROJECTS * MY PROJECTS * MY PROJECTS * MY PROJECTS *
+                  </textPath>
+                </text>
+              </svg>
+              <span class="orbit-core">
+                <i data-lucide="arrow-down" class="h-9 w-9"></i>
+              </span>
+            </a>
+          </section>
+
+          <section id="about" class="page-section reveal-card">
+            <div class="section-pill reveal-child">
+              <i data-lucide="user-round" class="h-3.5 w-3.5"></i>
+              <span>ABOUT</span>
+            </div>
+            <div class="section-body">
+              <h2 class="section-title reveal-child">About Me</h2>
+              <p class="section-text reveal-child">
+                For the past five years, I have worked in crypto trading and portfolio management while building hands-on experience in operations, client support, and business tracking through roles at Installers PH and our family frozen store in Cebu. As a graduating Computer Engineering student with Latin Honors this June, I have recently focused on web development and built three websites this month using HTML, CSS, JavaScript, and databases.
+              </p>
+            </div>
+          </section>
+
+          <section id="resume" class="page-section reveal-card">
+            <div class="section-pill reveal-child">
+              <i data-lucide="briefcase-business" class="h-3.5 w-3.5"></i>
+              <span>RESUME</span>
+            </div>
+            <div class="section-body">
+              <h2 class="section-title reveal-child">Education &<br /><span class="text-accent">Experience</span></h2>
+              <div class="timeline">
+                <div class="timeline-item reveal-child">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <p class="timeline-date">2020 - Present</p>
+                    <div class="timeline-entries">
+                      <div class="timeline-entry">
+                        <h3>Framer Designer & Developer</h3>
+                        <p class="timeline-company">Brunodee Agency</p>
+                      </div>
+                      <div class="timeline-entry">
+                        <h3>Front-End WordPress Developer</h3>
+                        <p class="timeline-company">Envato Market</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="timeline-item reveal-child">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <p class="timeline-date">2013 - 2019</p>
+                    <div class="timeline-entries">
+                      <div class="timeline-entry">
+                        <h3>Webflow Developer & Co-Founder</h3>
+                        <p class="timeline-company">Designflow Studio</p>
+                      </div>
+                      <div class="timeline-entry">
+                        <h3>Web Designer</h3>
+                        <p class="timeline-company">Freelance</p>
+                      </div>
+                      <div class="timeline-entry">
+                        <h3>Leader Team of Marketing</h3>
+                        <p class="timeline-company">AHA Marketing Agency</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="timeline-item reveal-child">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <p class="timeline-date">2010 - 2013</p>
+                    <div class="timeline-entries">
+                      <div class="timeline-entry">
+                        <h3>Bachelor Degree of Information Technology</h3>
+                        <p class="timeline-company">US RMIT University</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="services" class="page-section reveal-card">
+            <div class="section-pill reveal-child">
+              <i data-lucide="layers-3" class="h-3.5 w-3.5"></i>
+              <span>SERVICES</span>
+            </div>
+            <div class="section-body">
+              <h2 class="section-title reveal-child">My <span class="text-accent">Specializations</span></h2>
+              <div class="services-grid">
+                <article class="service-card reveal-child">
+                  <div class="service-card-icon">
+                    <i data-lucide="layout-grid" class="h-7 w-7"></i>
+                  </div>
+                  <h3>Website Design</h3>
+                  <p>I create digital products with unique ideas using Figma & Framer.</p>
+                  <span class="service-count">24 PROJECTS</span>
+                </article>
+                <article class="service-card reveal-child">
+                  <div class="service-card-icon">
+                    <i data-lucide="code" class="h-7 w-7"></i>
+                  </div>
+                  <h3>Development</h3>
+                  <p>Responsive front-end builds with clean code, modern frameworks, and smooth interactions.</p>
+                  <span class="service-count">24 PROJECTS</span>
+                </article>
+                <article class="service-card reveal-child">
+                  <div class="service-card-icon">
+                    <i data-lucide="trending-up" class="h-7 w-7"></i>
+                  </div>
+                  <h3>SEO & Marketing</h3>
+                  <p>Strategic optimization and growth-focused campaigns that drive visibility and conversions.</p>
+                  <span class="service-count">24 PROJECTS</span>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <section id="skills" class="page-section reveal-card">
+            <div class="section-pill reveal-child">
+              <i data-lucide="layout-grid" class="h-3.5 w-3.5"></i>
+              <span>MY SKILLS</span>
+            </div>
+            <div class="section-body">
+              <h2 class="section-title reveal-child">My <span class="text-accent">Advantages</span></h2>
+              <div class="skills-grid">
+                <div class="skill-card reveal-child">
+                  <div class="skill-card-pill">
+                    <i class="fa-brands fa-figma skill-card-icon"></i>
+                    <span class="skill-percent">92%</span>
+                  </div>
+                  <span class="skill-label">Figma</span>
+                </div>
+                <div class="skill-card reveal-child">
+                  <div class="skill-card-pill">
+                    <i data-lucide="layout" class="skill-card-icon lucide-icon"></i>
+                    <span class="skill-percent">85%</span>
+                  </div>
+                  <span class="skill-label">Framer</span>
+                </div>
+                <div class="skill-card reveal-child">
+                  <div class="skill-card-pill">
+                    <i data-lucide="globe" class="skill-card-icon lucide-icon"></i>
+                    <span class="skill-percent">80%</span>
+                  </div>
+                  <span class="skill-label">Webflow</span>
+                </div>
+                <div class="skill-card reveal-child">
+                  <div class="skill-card-pill">
+                    <i class="fa-brands fa-react skill-card-icon"></i>
+                    <span class="skill-percent">90%</span>
+                  </div>
+                  <span class="skill-label">React</span>
+                </div>
+                <div class="skill-card reveal-child">
+                  <div class="skill-card-pill">
+                    <i class="fa-brands fa-wordpress skill-card-icon"></i>
+                    <span class="skill-percent">86%</span>
+                  </div>
+                  <span class="skill-label">WordPress</span>
+                </div>
+                <div class="skill-card reveal-child">
+                  <div class="skill-card-pill">
+                    <i class="fa-brands fa-laravel skill-card-icon"></i>
+                    <span class="skill-percent">70%</span>
+                  </div>
+                  <span class="skill-label">Laravel/PHP</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="portfolios" class="page-section reveal-card">
+            <div class="section-pill reveal-child">
+              <i data-lucide="image" class="h-3.5 w-3.5"></i>
+              <span>PORTFOLIOS</span>
+            </div>
+            <div class="section-body">
+              <h2 class="section-title reveal-child">Featured <span class="text-accent">Projects</span></h2>
+              <div class="portfolio-gallery">
+                <article class="portfolio-item portfolio-item-featured reveal-child">
+                  <a href="#" class="portfolio-link" aria-label="View Bureau - Architecture Studio Website">
+                    <div class="portfolio-image-wrap">
+                      <div class="portfolio-image portfolio-image-bureau"></div>
+                      <div class="portfolio-overlay">
+                        <h3>Bureau - Architecture Studio Website</h3>
+                        <span class="portfolio-view">View Project</span>
+                      </div>
+                    </div>
+                    <div class="portfolio-tags">
+                      <span>Figma</span>
+                      <span>Framer</span>
+                      <span>WordPress</span>
+                    </div>
+                    <p class="portfolio-caption">Bureau - Architecture Studio Website</p>
+                  </a>
+                </article>
+                <article class="portfolio-item reveal-child">
+                  <a href="#" class="portfolio-link" aria-label="View Museum Project">
+                    <div class="portfolio-image-wrap">
+                      <div class="portfolio-image portfolio-image-museum"></div>
+                      <div class="portfolio-overlay">
+                        <h3>Museum Exhibition Site</h3>
+                        <span class="portfolio-view">View Project</span>
+                      </div>
+                    </div>
+                    <div class="portfolio-tags">
+                      <span>WordPress</span>
+                      <span>Laravel/PHP</span>
+                    </div>
+                    <p class="portfolio-caption">Museum Exhibition Site</p>
+                  </a>
+                </article>
+                <article class="portfolio-item reveal-child">
+                  <a href="#" class="portfolio-link" aria-label="View Schedule Dashboard">
+                    <div class="portfolio-image-wrap">
+                      <div class="portfolio-image portfolio-image-dashboard"></div>
+                      <div class="portfolio-overlay">
+                        <h3>Today's Schedule Dashboard</h3>
+                        <span class="portfolio-view">View Project</span>
+                      </div>
+                    </div>
+                    <div class="portfolio-tags">
+                      <span>Figma</span>
+                      <span>Webflow</span>
+                    </div>
+                    <p class="portfolio-caption">Today's Schedule Dashboard</p>
+                  </a>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <section id="testimonial" class="page-section reveal-card">
+            <div class="section-pill reveal-child">
+              <i data-lucide="message-square-quote" class="h-3.5 w-3.5"></i>
+              <span>TESTIMONIAL</span>
+            </div>
+            <div class="section-body">
+              <h2 class="section-title reveal-child">Testimonial</h2>
+              <article class="info-card reveal-child max-w-4xl">
+                <p class="section-text reveal-child">
+                  "Drake translated our rough ideas into a polished, premium website that felt intentional in every detail. The pacing, the motion, and the visual quality all stood out immediately."
+                </p>
+                <p class="info-kicker mt-6 reveal-child">Creative Director, Northline Studio</p>
+              </article>
+            </div>
+          </section>
+
+          <section id="contact" class="page-section contact-section reveal-card">
+            <div class="section-pill reveal-child">
+              <i data-lucide="dollar-sign" class="h-3.5 w-3.5"></i>
+              <span>CONTACT</span>
+            </div>
+            <div class="section-body contact-body">
+              <h2 class="section-title contact-title reveal-child">Let's Work <span class="text-accent">Together!</span></h2>
+              <a href="mailto:hansmanguilimotan880@gmail.com" class="contact-email reveal-child">hansmanguilimotan880@gmail.com</a>
+
+              <form class="contact-form reveal-child" id="contactForm" action="https://formsubmit.co/ajax/hansmanguilimotan880@gmail.com" method="POST" novalidate>
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
+                <div class="contact-form-grid">
+                  <div class="contact-field">
+                    <label for="fullname">FULL NAME <span class="required">*</span></label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Your Full Name" required autocomplete="name" />
+                  </div>
+                  <div class="contact-field">
+                    <label for="email">EMAIL <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="Your email address" required autocomplete="email" />
+                  </div>
+                  <div class="contact-field">
+                    <label for="phone">PHONE (optional)</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Your number phone" autocomplete="tel" />
+                  </div>
+                  <div class="contact-field">
+                    <label for="subject">SUBJECT <span class="required">*</span></label>
+                    <select id="subject" name="subject" required>
+                      <option value="" disabled selected>Select a subject</option>
+                      <option value="project">Project Inquiry</option>
+                      <option value="collaboration">Collaboration</option>
+                      <option value="general">General</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="contact-field contact-field-full">
+                  <label for="budget">YOUR BUDGET (optional)</label>
+                  <input type="text" id="budget" name="budget" placeholder="A range budget for your project" />
+                </div>
+                <div class="contact-field contact-field-full">
+                  <label for="message">MESSAGE</label>
+                  <textarea id="message" name="message" placeholder="Write your message here ..." rows="5"></textarea>
+                </div>
+                <div class="contact-form-footer">
+                  <label class="contact-attachment" for="attachment">
+                    <i data-lucide="cloud-upload" class="h-4 w-4"></i>
+                    <span>ADD AN ATTACHMENT</span>
+                  </label>
+                  <input type="file" id="attachment" name="attachment" class="contact-file-input" accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png" />
+                  <button type="submit" class="contact-submit" id="contactSubmitBtn">
+                    SEND MESSAGE
+                  </button>
+                </div>
+                <p class="contact-message contact-success" id="contactSuccess" role="status" aria-live="polite"></p>
+                <p class="contact-message contact-error" id="contactError" role="alert"></p>
+              </form>
+            </div>
+          </section>
+        </main>
+
+        <nav class="fixed right-10 top-1/2 z-50 hidden -translate-y-1/2 xl:flex xl:flex-col xl:items-center xl:gap-4">
+          <button class="menu-button" aria-label="Menu">
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+          </button>
+          <div class="flex flex-col gap-6 py-8 px-4 rounded-full border border-gray-800 bg-[#191919] backdrop-blur-sm pill-nav">
+            <a class="nav-icon active group relative flex items-center justify-center text-[#28e98c]" href="#home" data-target="home" aria-label="Home">
+              <span class="nav-tooltip">
+                Home
+                <span class="nav-tooltip-arrow"></span>
+              </span>
+              <i data-lucide="house" class="h-5 w-5"></i>
+            </a>
+            <a class="nav-icon group relative flex items-center justify-center" href="#about" data-target="about" aria-label="About">
+              <span class="nav-tooltip">
+                About
+                <span class="nav-tooltip-arrow"></span>
+              </span>
+              <i data-lucide="user-round" class="h-5 w-5"></i>
+            </a>
+            <a class="nav-icon group relative flex items-center justify-center" href="#resume" data-target="resume" aria-label="Resume">
+              <span class="nav-tooltip">
+                Resume
+                <span class="nav-tooltip-arrow"></span>
+              </span>
+              <i data-lucide="briefcase-business" class="h-5 w-5"></i>
+            </a>
+            <a class="nav-icon group relative flex items-center justify-center" href="#services" data-target="services" aria-label="Services">
+              <span class="nav-tooltip">
+                Services
+                <span class="nav-tooltip-arrow"></span>
+              </span>
+              <i data-lucide="layers-3" class="h-5 w-5"></i>
+            </a>
+            <a class="nav-icon group relative flex items-center justify-center" href="#skills" data-target="skills" aria-label="Skills">
+              <span class="nav-tooltip">
+                Skills
+                <span class="nav-tooltip-arrow"></span>
+              </span>
+              <i data-lucide="layout-grid" class="h-5 w-5"></i>
+            </a>
+            <a class="nav-icon group relative flex items-center justify-center" href="#portfolios" data-target="portfolios" aria-label="Portfolios">
+              <span class="nav-tooltip">
+                Portfolios
+                <span class="nav-tooltip-arrow"></span>
+              </span>
+              <i data-lucide="images" class="h-5 w-5"></i>
+            </a>
+            <a class="nav-icon group relative flex items-center justify-center" href="#testimonial" data-target="testimonial" aria-label="Testimonial">
+              <span class="nav-tooltip">
+                Testimonial
+                <span class="nav-tooltip-arrow"></span>
+              </span>
+              <i data-lucide="message-square" class="h-5 w-5"></i>
+            </a>
+            <a class="nav-icon group relative flex items-center justify-center" href="#contact" data-target="contact" aria-label="Contact">
+              <span class="nav-tooltip">
+                Contact
+                <span class="nav-tooltip-arrow"></span>
+              </span>
+              <i data-lucide="mail" class="h-5 w-5"></i>
+            </a>
+          </div>
+        </nav>
+      </div>
+
+      <nav class="mobile-nav xl:hidden">
+        <a class="nav-icon active" href="#home" data-target="home" aria-label="Home">
+          <i data-lucide="house" class="h-4 w-4"></i>
+        </a>
+        <a class="nav-icon" href="#about" data-target="about" aria-label="About">
+          <i data-lucide="user-round" class="h-4 w-4"></i>
+        </a>
+        <a class="nav-icon" href="#resume" data-target="resume" aria-label="Resume">
+          <i data-lucide="briefcase-business" class="h-4 w-4"></i>
+        </a>
+        <a class="nav-icon" href="#services" data-target="services" aria-label="Services">
+          <i data-lucide="layers-3" class="h-4 w-4"></i>
+        </a>
+        <a class="nav-icon" href="#skills" data-target="skills" aria-label="Skills">
+          <i data-lucide="layout-grid" class="h-4 w-4"></i>
+        </a>
+        <a class="nav-icon" href="#portfolios" data-target="portfolios" aria-label="Portfolios">
+          <i data-lucide="images" class="h-4 w-4"></i>
+        </a>
+        <a class="nav-icon" href="#testimonial" data-target="testimonial" aria-label="Testimonial">
+          <i data-lucide="message-square-quote" class="h-4 w-4"></i>
+        </a>
+        <a class="nav-icon" href="#contact" data-target="contact" aria-label="Contact">
+          <i data-lucide="mail" class="h-4 w-4"></i>
+        </a>
+      </nav>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
