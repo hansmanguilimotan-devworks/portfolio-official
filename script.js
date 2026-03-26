@@ -72,54 +72,71 @@
     const errorEl = document.getElementById("contactError");
     const submitBtn = document.getElementById("contactSubmitBtn");
 
-    contactForm.addEventListener("submit", async function (e) {
-      e.preventDefault();
+    const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
+    const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+    const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+
+    const isEmailjsConfigured =
+      !EMAILJS_SERVICE_ID.includes("YOUR_") &&
+      !EMAILJS_TEMPLATE_ID.includes("YOUR_") &&
+      !EMAILJS_PUBLIC_KEY.includes("YOUR_");
+
+    if (
+      isEmailjsConfigured &&
+      window.emailjs &&
+      typeof window.emailjs.init === "function"
+    ) {
+      window.emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+    }
+
+    if (submitBtn) {
+      submitBtn.addEventListener("click", async function () {
       const fullname = document.getElementById("fullname").value.trim();
       const email = document.getElementById("email").value.trim();
       const subjectEl = document.getElementById("subject");
       const subjectLabel = subjectEl.options[subjectEl.selectedIndex]?.text || "Contact";
 
       if (!fullname || !email || !subjectEl.value) {
+        if (errorEl) errorEl.textContent = "Please fill in your full name, email, and subject.";
         return;
       }
 
       if (successEl) successEl.textContent = "";
       if (errorEl) errorEl.textContent = "";
 
-      const formData = new FormData(contactForm);
-      formData.append("_subject", `Portfolio Contact: ${subjectLabel}`);
-
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.textContent = "SENDING...";
+      if (!window.emailjs || typeof window.emailjs.sendForm !== "function") {
+        if (errorEl) {
+          errorEl.textContent = "EmailJS is not loaded. Please refresh and try again.";
+        }
+        return;
       }
 
-      try {
-        const response = await fetch(contactForm.action, {
-          method: "POST",
-          body: formData,
-          headers: {
-            Accept: "application/json"
-          }
-        });
-
-        if (!response.ok) {
-          throw new Error("Form submission failed");
+      if (!isEmailjsConfigured) {
+        if (errorEl) {
+          errorEl.textContent =
+            "EmailJS is not configured yet. Please add your EmailJS Service ID, Template ID, and Public Key.";
         }
+        return;
+      }
+
+      submitBtn.disabled = true;
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = "Sending...";
+
+      try {
+        // sendForm uses each input's `name` attribute to populate your EmailJS template variables.
+        await window.emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, contactForm);
 
         contactForm.reset();
         if (successEl) successEl.textContent = "Success! Your message has been sent.";
       } catch (error) {
-        if (errorEl) {
-          errorEl.textContent = "Could not send your message right now. Please try again.";
-        }
+        if (errorEl) errorEl.textContent = "Could not send your message right now. Please try again.";
       } finally {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = "SEND MESSAGE";
-        }
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText || "SEND MESSAGE";
       }
-    });
+      });
+    }
   }
 
   const orbitLink = document.querySelector(".orbit-link");
